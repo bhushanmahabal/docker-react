@@ -4,7 +4,7 @@ services:
         - docker
 
 before-install :
-        - docker build -t bhushanmahabal/docker-react .
+        - docker build -t bhushanmahabal/docker-react f Dockerfile.dev . 
 
 script:
-        - docker run bhushanmahabal/docker-react npm run test -- --coverage
+        - docker run -e CI=true bhushanmahabal/docker-react npm run test -- --coverage
