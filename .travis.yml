@@ -1,0 +1,10 @@
+sudo: required
+
+services:
+        - docker
+
+before-install :
+        - docker build -t bhushanmahabal/docker-react .
+
+script:
+        - docker run bhushanmahabal/docker-react npm run test -- --coverage
